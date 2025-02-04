@@ -3,9 +3,9 @@ int main(void)
 {
     /* Loop forever */
 
-	void gpio_init();
+	gpio_init();
 	for(;;)
 	{
-		void red_led_blink();
+		red_led_blink();
 	}
 }
