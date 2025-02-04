@@ -10,7 +10,7 @@
 #define GPIOBEN (1U<<1)
 
 #define GPIOB14	(1U<<14)	//RED LED
-
+#define GPIOB7 (1U<<7)          //BLUE LED
 
 #define RED_LED GPIOB14
 
@@ -26,8 +26,8 @@ void gpio_init(void)
 	//set mode of the pins
 
 	//BLUE LED, GPIO7 OUTPUT
-	GPIOB_MODER |= (1U<<14);
-	GPIOB_MODER &= ~(1U<<15);
+	//GPIOB_MODER |= (1U<<14);
+	//GPIOB_MODER &= ~(1U<<15);
 
 	//red led,GPIO14 output
 	GPIOB_MODER |= (1U<<28);
