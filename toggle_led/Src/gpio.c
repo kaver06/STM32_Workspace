@@ -16,8 +16,8 @@
 
 void gpio_init(void)
 {
-	//enable clock access to GPIO ports B
-		//enable clock to GPIO B
+	//enable clock access to GPIO ports B and c
+		
 
 		RCC_AHB1ENR |= GPIOBEN;
 		RCC_AHB1ENR |= GPIOCEN;
