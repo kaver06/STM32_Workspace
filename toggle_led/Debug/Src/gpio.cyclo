@@ -1,0 +1,4 @@
+../Src/gpio.c:17:6:gpio_init	1
+../Src/gpio.c:33:6:led_toggle	1
+../Src/gpio.c:39:6:delay	2
+../Src/gpio.c:43:6:check_state	2
