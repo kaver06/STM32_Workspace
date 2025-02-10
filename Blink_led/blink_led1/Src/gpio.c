@@ -7,7 +7,7 @@
 #include "gpio.h"
 
 
-#define GPIOBEN (1U<<1) // i love anagha
+#define GPIOBEN (1U<<1) 
 
 #define GPIOB14	(1U<<14)	//RED LED
 #define GPIOB7 (1U<<7)          //BLUE LED
