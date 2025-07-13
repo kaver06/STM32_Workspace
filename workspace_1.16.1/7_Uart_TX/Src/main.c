@@ -1,8 +1,8 @@
-#include "stm32f4xx.h"
+#include "stm32f446xx.h"
 #include<stdint.h>
 
-#define GPIOAEN		(1U<<0)
-#define UART2EN		(1U<<17)
+#define GPIODEN		(1U<<3)
+#define UART3EN		(1U<<18)
 
 #define CR1_TE (1U<<3)
 #define CR1_UE (1U<<13)
@@ -16,8 +16,8 @@
 static uint16_t compute_uart_bd(uint32_t PeriphClk,uint32_t BaudRate);
 static void uart_set_baudrate(USART_TypeDef *USARTx,uint32_t PeriphClk,uint32_t BaudRate);
 
-void uart2_write(int ch);
-void init_uart2_tx(void);
+void uart3_write(int ch);
+void init_uart3_tx(void);
 
 
 #define Uart_BaudRate 115200
@@ -25,51 +25,51 @@ void init_uart2_tx(void);
 
 int main(void)
 {
-	init_uart2_tx();
+	init_uart3_tx();
 	while(1)
 	{
-		uart2_write('Y');
+		uart3_write('Y');
 	}
 }
 
-void init_uart2_tx(void)
+void init_uart3_tx(void)
 {
 	/*********configure uart gpio_pin***********/
-	//enable clock access to gpioA
-	RCC->AHB1ENR|=GPIOAEN;
+	//enable clock access to gpioD
+	RCC->AHB1ENR|=GPIODEN;
 	//set PA2 to alternate function mode
-	GPIOA->MODER|= (1U<<5);
-	GPIOA->MODER&= ~(1U<<4);
+	GPIOD->MODER|= (1U<<17);
+	GPIOD->MODER&= ~(1U<<16);
 	//set PA2 alternate function to type UART_TX (AF7)
-	GPIOA->AFR[0]&=~(1U<<11);
-	GPIOA->AFR[0]|=(1U<<10);
-	GPIOA->AFR[0]|=(1U<<9);
-	GPIOA->AFR[0]|=(1U<<8);
+	GPIOD->AFR[1]&=~(1U<<3);
+	GPIOD->AFR[1]|=(1U<<2);
+	GPIOD->AFR[1]|=(1U<<1);
+	GPIOD->AFR[1]|=(1U<<0);
 
 	/*********configuring Uart module**********/
-	//enable clock access to uart2
-	RCC->APB1ENR|=(1U<<17);
+	//enable clock access to uart3
+	RCC->APB1ENR|=UART3EN;
 	//configure baudrate
-	uart_set_baudrate(USART2,APB1,Uart_BaudRate);
+	uart_set_baudrate(USART3,APB1,Uart_BaudRate);
 	//configure the transfer direction
-	USART2->CR1 = CR1_TE;
+	USART3->CR1 = CR1_TE;
 
 	//enable uart module
-	USART2->CR1 |= CR1_UE;
+	USART3->CR1 |= CR1_UE;
 }
 
-void uart2_write(int ch)
+void uart3_write(int ch)
 {
 	//ensure the transmit data register is empty
-	while(!(USART2->SR & SR_TXE));
+	while(!(USART3->SR & SR_TXE));
 	//write to the transmit data register
-	USART2->DR = (ch&0xFF);
+	USART3->DR = (ch&0xFF);
 
 }
 
 static void uart_set_baudrate(USART_TypeDef *USARTx,uint32_t PeriphClk,uint32_t BaudRate)
 {
-	USART2->BRR = compute_uart_bd(PeriphClk,BaudRate);
+	USART3->BRR = compute_uart_bd(PeriphClk,BaudRate);
 }
 
 static uint16_t compute_uart_bd(uint32_t PeriphClk,uint32_t BaudRate)
