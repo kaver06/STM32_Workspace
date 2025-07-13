@@ -33,9 +33,8 @@ void delay(void)
 }
 void check_state(void)
 {
-	if(GPIOC_IDR && GPIOC13)
-	{
-		GPIOB_ODR ^=(GPIOB7);
-		delay();
-	}
+	if(GPIOC_IDR & GPIOC13)
+		GPIOB_ODR |=(GPIOB7);
+	else
+		GPIOB_ODR &=~(GPIOB7);
 }
