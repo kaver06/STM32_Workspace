@@ -1,4 +1,0 @@
-../Src/gpio.c:17:6:gpio_init	4	static
-../Src/gpio.c:33:6:led_toggle	8	static
-../Src/gpio.c:39:6:delay	16	static
-../Src/gpio.c:43:6:check_state	8	static
