@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f446xx.h"
+#include "uart.h"
+
+
+static void tx_interrupt_callback(void);
+
+int main(void)
+{
+
+
+	init_uart3_tx_interrupt();
+
+	for(;;)
+	{
+
+	}
+
+}
+
+static void tx_interrupt_callback(void)
+{
+	USART3->DR = (ch&0xFF);
+	printf("Hello from STM32F4........\n\r");
+}
+void USART3_IRQHandler(void)
+{
+	if(USART3->SR & SR_TXE)
+		tx_interrupt_callback();
+
+}
+
+
+
+

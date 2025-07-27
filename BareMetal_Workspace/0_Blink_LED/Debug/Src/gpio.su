@@ -1,0 +1,2 @@
+../Src/gpio.c:13:6:gpio_init	4	static
+../Src/gpio.c:31:6:red_led_blink	16	static

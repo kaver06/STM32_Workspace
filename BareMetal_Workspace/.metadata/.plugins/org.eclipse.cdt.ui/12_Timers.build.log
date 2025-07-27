@@ -1,0 +1,10 @@
+19:27:27 **** Build of configuration Debug for project 12_Timers ****
+make -j8 all 
+arm-none-eabi-size  12_Timers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5388	    100	   1900	   7388	   1cdc	12_Timers.elf
+Finished building: default.size.stdout
+ 
+
+19:27:27 Build Finished. 0 errors, 0 warnings. (took 296ms)
+

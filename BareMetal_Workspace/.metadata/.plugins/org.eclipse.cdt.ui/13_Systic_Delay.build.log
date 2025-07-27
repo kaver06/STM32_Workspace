@@ -1,0 +1,10 @@
+19:55:56 **** Incremental Build of configuration Debug for project 13_Systic_Delay ****
+make -j8 all 
+arm-none-eabi-size  13_Systic_Delay.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5380	    100	   1900	   7380	   1cd4	13_Systic_Delay.elf
+Finished building: default.size.stdout
+ 
+
+19:55:56 Build Finished. 0 errors, 0 warnings. (took 208ms)
+

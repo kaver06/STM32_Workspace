@@ -1,0 +1,10 @@
+19:17:38 **** Incremental Build of configuration Debug for project 8_Uart_TX_printf_modular ****
+make -j8 all 
+arm-none-eabi-size  8_Uart_TX_printf_modular.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5164	    100	   1900	   7164	   1bfc	8_Uart_TX_printf_modular.elf
+Finished building: default.size.stdout
+ 
+
+19:17:39 Build Finished. 0 errors, 0 warnings. (took 264ms)
+

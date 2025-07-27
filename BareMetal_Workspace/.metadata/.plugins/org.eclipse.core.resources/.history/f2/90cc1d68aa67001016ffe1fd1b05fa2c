@@ -1,0 +1,40 @@
+#include "stm32f446xx.h"
+#include <stdint.h>
+#include <stdio.h>
+#include "uart.h"
+#include "adc.h"
+#include "Systick.h"
+#include "tim.h"
+#include "exti.h"
+
+#define LED_7 (1U<<7)
+#define GPIOBEN (1U<<1)
+int main(void)
+{
+	RCC->AHB1ENR |= GPIOBEN;
+	GPIOB->MODER |= (1U<<14);
+	GPIOB->MODER &= ~(1U<<15);
+	pc13_exti_init();
+	init_uart3_rxtx();
+	for(;;)
+	{
+	}
+}
+
+static void exti_callback(void)
+{
+	printf("BtN Pressed\r");
+	GPIOB->ODR |= LED_7;
+}
+
+void EXTI15_10_IRQHandler(void)
+{
+	if((EXTI->PR & Line13)!=0)
+	{
+		//clear the pending register bit
+		EXTI->PR |= Line13;
+
+		exti_callback();
+	}
+
+}

@@ -1,0 +1,78 @@
+#include "stm32f446xx.h"
+#include<stdint.h>
+
+#define GPIODEN		(1U<<3)
+#define UART3EN		(1U<<18)
+
+#define CR1_TE (1U<<3)
+#define CR1_UE (1U<<13)
+#define SR_TXE (1U<<7)
+
+#define SYS_FREQ 16000000
+#define APB1 SYS_FREQ
+
+#define Uart_BaudRate 115200
+
+static uint16_t compute_uart_bd(uint32_t PeriphClk,uint32_t BaudRate);
+static void uart_set_baudrate(USART_TypeDef *USARTx,uint32_t PeriphClk,uint32_t BaudRate);
+
+void uart3_write(int ch);
+void init_uart3_tx(void);
+
+
+#define Uart_BaudRate 115200
+
+
+int main(void)
+{
+	init_uart3_tx();
+	while(1)
+	{
+		uart3_write('Y');
+	}
+}
+
+void init_uart3_tx(void)
+{
+	/*********configure uart gpio_pin***********/
+	//enable clock access to gpioD
+	RCC->AHB1ENR|=GPIODEN;
+	//set PA2 to alternate function mode
+	GPIOD->MODER|= (1U<<17);
+	GPIOD->MODER&= ~(1U<<16);
+	//set PA2 alternate function to type UART_TX (AF7)
+	GPIOD->AFR[1]&=~(1U<<3);
+	GPIOD->AFR[1]|=(1U<<2);
+	GPIOD->AFR[1]|=(1U<<1);
+	GPIOD->AFR[1]|=(1U<<0);
+
+	/*********configuring Uart module**********/
+	//enable clock access to uart3
+	RCC->APB1ENR|=UART3EN;
+	//configure baudrate
+	uart_set_baudrate(USART3,APB1,Uart_BaudRate);
+	//configure the transfer direction
+	USART3->CR1 = CR1_TE;
+
+	//enable uart module
+	USART3->CR1 |= CR1_UE;
+}
+
+void uart3_write(int ch)
+{
+	//ensure the transmit data register is empty
+	while(!(USART3->SR & SR_TXE));
+	//write to the transmit data register
+	USART3->DR = (ch&0xFF);
+
+}
+
+static void uart_set_baudrate(USART_TypeDef *USARTx,uint32_t PeriphClk,uint32_t BaudRate)
+{
+	USARTx->BRR = compute_uart_bd(PeriphClk,BaudRate);
+}
+
+static uint16_t compute_uart_bd(uint32_t PeriphClk,uint32_t BaudRate)
+{
+	return (PeriphClk+BaudRate/2)/BaudRate;
+}

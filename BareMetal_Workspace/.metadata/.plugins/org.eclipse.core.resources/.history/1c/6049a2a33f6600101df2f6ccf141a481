@@ -1,0 +1,22 @@
+#include "stm32f4xx.h"
+
+
+
+#define TIM4EN		(1U<<2)
+#define CR1_CEN		(1U<<0)
+
+void tim2_1hz_init(void)
+{
+	/*Enable clock access to tim2*/
+	RCC->APB1ENR |=TIM4EN;
+
+	/*Set prescaler value*/
+	TIM4->PSC =  1600 - 1 ;  //  16 000 000 / 1 600 = 10 000
+	/*Set auto-reload value*/
+	TIM4->ARR =  10000 - 1;  // 10 000 / 10 000 = 1
+	/*Clear counter*/
+	TIM4->CNT = 0;
+
+	/*Enable timer*/
+	TIM4->CR1 = CR1_CEN;
+}

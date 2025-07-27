@@ -1,0 +1,21 @@
+#include "stm32f446xx.h"
+#include <stdint.h>
+#include <stdio.h>
+#include "uart.h"
+#include "adc.h"
+#include "Systick.h"
+#include "tim.h"
+
+
+int main(void)
+{
+
+	for(;;)
+	{
+	}
+}
+
+void EXTI15_10_IRQHandler(void)
+{
+
+}

@@ -1,0 +1,23 @@
+#include "stm32f446xx.h"
+#include <stdint.h>
+#include <stdio.h>
+#include "uart.h"
+#include "adc.h"
+#include "Systick.h"
+#include "tim.h"
+
+int timestamp;
+//set up: connect a jumper wire from PB7 to PB8
+int main(void)
+{
+	 init_output_compare();
+//init_input_compare();
+	for(;;)
+	{
+/*/wait until edge is captured
+		while(!(TIM2->SR & SR_C1IF));
+		//read value
+		timestamp = TIM2->CCR1;
+*/	}
+}
+

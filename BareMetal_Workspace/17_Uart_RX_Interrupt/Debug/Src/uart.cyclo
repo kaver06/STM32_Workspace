@@ -1,0 +1,8 @@
+C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/17_Uart_RX_Interrupt/Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	2
+../Src/uart.c:22:5:__io_putchar	1
+../Src/uart.c:28:6:init_uart3_rxtx	1
+../Src/uart.c:62:6:uart3_write	2
+../Src/uart.c:70:6:uart3_read	2
+../Src/uart.c:77:13:uart_set_baudrate	1
+../Src/uart.c:82:17:compute_uart_bd	1
+../Src/uart.c:88:6:init_uart3_interrupt_rxtx	1

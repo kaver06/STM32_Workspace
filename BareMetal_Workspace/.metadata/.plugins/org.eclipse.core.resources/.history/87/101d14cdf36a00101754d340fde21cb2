@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdint.h>
+#include "stm32f446xx.h"
+#include "uart.h"
+volatile int interrupt_triggered = 0;
+
+int ch;
+static void tx_interrupt_callback(void);
+int main(void)
+{
+
+
+	init_uart3_tx_interrupt();
+
+	for(;;)
+	{
+		 if (interrupt_triggered)
+		        {
+		            printf("Hey this is from STM32 - interrupt triggered!\r\n");
+		            interrupt_triggered = 0; // clear the flag
+		        }
+	}
+
+}
+
+static void tx_interrupt_callback(void)
+{
+	USART3->DR = (ch&0xFF);
+	interrupt_triggered = 1;
+
+}
+void USART3_IRQHandler(void)
+{
+	if(USART3->SR & SR_TXE)
+		tx_interrupt_callback();
+
+}
+
+
+
+

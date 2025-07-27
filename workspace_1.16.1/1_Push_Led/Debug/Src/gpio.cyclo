@@ -1,3 +1,0 @@
-../Src/gpio.c:9:6:gpio_init	1
-../Src/gpio.c:30:6:delay	2
-../Src/gpio.c:34:6:check_state	2

@@ -1,0 +1,36 @@
+#include "stm32f446xx.h"
+#include "exti.h"
+
+#define LED_7 (1U << 7)
+#define GPIOBEN (1U << 1)
+
+int main(void)
+{
+	// Enable GPIOB for LED
+	RCC->AHB1ENR |= GPIOBEN;
+	GPIOB->MODER &= ~(1U << 15); // Clear mode bits for PB7
+	GPIOB->MODER |=  (1U << 14); // Set PB7 as output
+
+	// Initialize external interrupt on PC13
+	pc13_exti_init();
+
+	while(1) {
+		// Do nothing — wait for interrupt
+	}
+}
+
+// Interrupt callback
+void exti_callback(void)
+{
+	GPIOB->ODR ^= LED_7;  // Toggle PB7 on each button press
+}
+
+// EXTI13 ISR
+void EXTI15_10_IRQHandler(void)
+{
+	if((EXTI->PR & (1U << 13)) != 0)
+	{
+		EXTI->PR |= (1U << 13);  // Clear pending bit
+		exti_callback();
+	}
+}

@@ -1,0 +1,10 @@
+07:34:58 **** Incremental Build of configuration Debug for project 15_Input_Compare ****
+make -j8 all 
+arm-none-eabi-size  15_Input_Compare.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1040	      8	   1568	   2616	    a38	15_Input_Compare.elf
+Finished building: default.size.stdout
+ 
+
+07:34:58 Build Finished. 0 errors, 0 warnings. (took 230ms)
+
