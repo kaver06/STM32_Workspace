@@ -1,0 +1,10 @@
+15:22:29 **** Incremental Build of configuration Debug for project 19_ADC_continuous11_ADC_continuous_conversion_interrupt_conversion ****
+make -j8 all 
+arm-none-eabi-size  19_ADC_continuous11_ADC_continuous_conversion_interrupt_conversion.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5488	    100	   1908	   7496	   1d48	19_ADC_continuous11_ADC_continuous_conversion_interrupt_conversion.elf
+Finished building: default.size.stdout
+ 
+
+15:22:29 Build Finished. 0 errors, 0 warnings. (took 214ms)
+

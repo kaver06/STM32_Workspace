@@ -1,0 +1,52 @@
+#include "stm32f446xx.h"
+
+#define SYSTICK_LOAD_VAL 	16000
+#define SYSTIC_ONESEC_LOAD  16000000
+#define SYSTICk_EN		 	(1U<<0)
+#define SYSTICK_CLKSOURCE	(1U<<2)
+#define SYSTICK_COUNTFLAG	(1U<<16)
+
+#define SYSTIC_TICKINT (1U<<1)
+void SystickDelay(int delay)
+{
+	//reload with number of clocks per milliseconds
+	SysTick->LOAD = SYSTICK_LOAD_VAL;
+	//clear systick current value register
+	SysTick->VAL = 0;
+	//Enable systick and select internal clk source
+	SysTick->CTRL = SYSTICk_EN | SYSTICK_CLKSOURCE;
+
+	for(int i=0;i<delay;i++)
+	{
+		//wait until the count flag is set
+		while((SysTick->CTRL & SYSTICK_COUNTFLAG)==0);
+	}
+	//finally turn off the systick control
+	SysTick->CTRL = 0;
+}
+
+void SystickDelay(int delay)
+{
+	//reload with number of clocks per seconds
+	SysTick->LOAD = SYSTIC_ONESEC_LOAD-1;
+	//clear systick current value register
+	SysTick->VAL = 0;
+	//Enable systick and select internal clk source
+	SysTick->CTRL = SYSTICk_EN | SYSTICK_CLKSOURCE;
+
+	//enable systic exception request
+	SysTick->CTRL | = SYSTIC_TICKINT;
+
+//	for(int i=0;i<delay;i++)
+//	{
+//		//wait until the count flag is set
+//		while((SysTick->CTRL & SYSTICK_COUNTFLAG)==0);
+//	}
+//	//finally turn off the systick control
+//	SysTick->CTRL = 0;
+}
+
+
+
+
+

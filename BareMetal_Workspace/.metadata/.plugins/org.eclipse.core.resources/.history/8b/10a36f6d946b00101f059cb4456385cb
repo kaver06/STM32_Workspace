@@ -1,0 +1,85 @@
+#include "adc.h"
+#include "stm32f446xx.h"
+
+
+#define GPIOAEN 	(1U<<0)
+#define ADC_CH1 	(1U<<0)
+#define ADC_EN		(1U<<8)
+#define ADC_LEN1	(0x00)
+#define ADC_ADON	(1U<<0)
+#define ADC_SWSTART	(1U<<30)
+#define ADC_CONT	(1U<<1)
+#define ADC_EOCIE	(1U<<5)
+
+//ADC channel 1 at port PA1
+// create a function to initialize adc for PA1
+void init_adc_PA1(void)
+{
+	/******configure the ADC GPIO pin*******/
+
+	//Enable clock access to GPIOA
+	RCC->AHB1ENR |=	GPIOAEN;
+	//Set Mode of PA1 as Analog
+	GPIOA->MODER |= (1U<<2);
+	GPIOA->MODER |= (1U<<3);
+	/******Configure the ADC module****/
+
+	//Enable clock access to ADC
+	RCC->APB2ENR |= ADC_EN;
+	//conversion sequence start
+	ADC1->SQR3 = ADC_CH1;
+	//conversion sequence length
+	ADC1->SQR1 = ADC_LEN1;
+
+	//Enable ADC module
+	ADC1->CR2|=ADC_ADON;
+}
+
+void start_conversion(void)
+{
+	//enable continuous conversion
+	//ADC1->CR2 |= ADC_CONT;
+	//start adc conversion (software start)
+	ADC1->CR2 |= ADC_SWSTART;
+}
+
+uint32_t read_adc(void)
+{
+	//wait for the conversion to be complete
+	while(!(ADC1->SR & ADC_EOC));
+	//read converted result
+	return ADC1->DR;
+}
+
+void init_adc_interrupt_PA1(void)
+{
+	/******configure the ADC GPIO pin*******/
+
+	//Enable clock access to GPIOA
+	RCC->AHB1ENR |=	GPIOAEN;
+	//Set Mode of PA1 as Analog
+	GPIOA->MODER |= (1U<<2);
+	GPIOA->MODER |= (1U<<3);
+	/******Configure the ADC module****/
+
+	//Enable clock access to ADC
+	RCC->APB2ENR |= ADC_EN;
+
+	//enable end of conversion interrupt
+	ADC1->CR1 |= ADC_EOCIE;
+
+	NVIC_EnableIRQ(ADC_IRQn);
+	//conversion sequence start
+	ADC1->SQR3 = ADC_CH1;
+	//conversion sequence length
+	ADC1->SQR1 = ADC_LEN1;
+
+
+	//Enable ADC module
+	ADC1->CR2|=ADC_ADON;
+}
+
+
+
+
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;19_ADC_continuous11_ADC_continuous_conversion_interrupt_conversion/Startup/startup_stm32f411retx.s&apos; to &apos;startup_stm32f446zetx.s&apos;" description="Rename resource &apos;startup_stm32f411retx.s&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Startup/startup_stm32f411retx.s" name="startup_stm32f446zetx.s" stamp="1753696330048" updateReferences="true"/>
+</session>

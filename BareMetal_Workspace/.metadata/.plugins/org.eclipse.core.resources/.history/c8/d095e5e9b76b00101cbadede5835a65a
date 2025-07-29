@@ -1,0 +1,36 @@
+#include "stm32f446xx.h"
+#include <stdint.h>
+#include <stdio.h>
+#include "uart.h"
+#include "adc.h"
+
+volatile uint32_t sensor_value;
+void callback_adc(void);
+int main(void)
+{
+	init_uart3_rxtx();
+	init_adc_interrupt_PA1();
+	start_conversion();
+
+	for(;;)
+	{
+
+	}
+}
+
+void callback_adc(void)
+{
+	sensor_value = ADC1->DR;
+	printf("THE ADC VALUE is %d \r",(int)sensor_value);
+	ADC1->CR2 |= ADC_SWSTART;
+
+}
+
+void ADC1_IRQHandler(void)
+{
+	if((ADC1->SR & ADC_EOC)!=0)
+	{
+		ADC1->SR &=~ ADC_EOC;
+		callback_adc();
+	}
+}

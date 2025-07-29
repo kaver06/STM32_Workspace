@@ -5,7 +5,6 @@
 #define SYSTICK_CLKSOURCE	(1U<<2)
 #define SYSTICK_COUNTFLAG	(1U<<16)
 
-
 void SystickDelay(int delay)
 {
 	//reload with number of clocks per milliseconds
