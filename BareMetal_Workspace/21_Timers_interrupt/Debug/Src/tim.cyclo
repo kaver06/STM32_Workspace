@@ -1,0 +1,3 @@
+C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/21_Timers_interrupt/Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	2
+../Src/tim.c:8:6:init_tim2_1hz	1
+../Src/tim.c:22:6:init_tim2_1hz_interrupt	1

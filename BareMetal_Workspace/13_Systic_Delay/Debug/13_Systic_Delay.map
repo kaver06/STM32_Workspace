@@ -1186,13 +1186,13 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00001e7b       0xd7 ./Src/systick.o
  .debug_macro   0x00001f52      0x105 ./Src/uart.o
 
-.debug_line     0x00000000     0x2294
+.debug_line     0x00000000     0x2292
  .debug_line    0x00000000      0x706 ./Src/main.o
  .debug_line    0x00000706      0x8a7 ./Src/syscalls.o
  .debug_line    0x00000fad      0x583 ./Src/sysmem.o
- .debug_line    0x00001530      0x5a6 ./Src/systick.o
- .debug_line    0x00001ad6      0x743 ./Src/uart.o
- .debug_line    0x00002219       0x7b ./Startup/startup_stm32f411retx.o
+ .debug_line    0x00001530      0x5a4 ./Src/systick.o
+ .debug_line    0x00001ad4      0x743 ./Src/uart.o
+ .debug_line    0x00002217       0x7b ./Startup/startup_stm32f411retx.o
 
 .debug_str      0x00000000    0x904de
  .debug_str     0x00000000    0x904de ./Src/main.o

@@ -35,8 +35,6 @@ void Systick_1hz_interrupt()
 	//Enable systick and select internal clk source 	//enable systic exception request
 
 	SysTick->CTRL = SYSTICk_EN | SYSTICK_CLKSOURCE | SYSTIC_TICKINT;
-
-
 }
 
 

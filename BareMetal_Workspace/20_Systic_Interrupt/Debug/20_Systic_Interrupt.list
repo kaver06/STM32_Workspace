@@ -484,8 +484,6 @@ void Systick_1hz_interrupt()
  8000474:	4b03      	ldr	r3, [pc, #12]	@ (8000484 <Systick_1hz_interrupt+0x20>)
  8000476:	2207      	movs	r2, #7
  8000478:	601a      	str	r2, [r3, #0]
-
-
 }
  800047a:	bf00      	nop
  800047c:	46bd      	mov	sp, r7

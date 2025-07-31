@@ -327,7 +327,7 @@ static void adc_callback(void)
  80003a2:	6cdb      	ldr	r3, [r3, #76]	@ 0x4c
  80003a4:	4a05      	ldr	r2, [pc, #20]	@ (80003bc <adc_callback+0x20>)
  80003a6:	6013      	str	r3, [r2, #0]
-	printf("Sensor value : %d \n\r",(int)sensor_value);
+	printf("Sensor value : %d \r",(int)sensor_value);
  80003a8:	4b04      	ldr	r3, [pc, #16]	@ (80003bc <adc_callback+0x20>)
  80003aa:	681b      	ldr	r3, [r3, #0]
  80003ac:	4619      	mov	r1, r3
@@ -1815,11 +1815,11 @@ Infinite_Loop:
  8000e88:	4630      	mov	r0, r6
  8000e8a:	f000 f879 	bl	8000f80 <_printf_i>
  8000e8e:	e7e4      	b.n	8000e5a <_vfiprintf_r+0x1e6>
- 8000e90:	08001591 	.word	0x08001591
- 8000e94:	0800159b 	.word	0x0800159b
+ 8000e90:	08001590 	.word	0x08001590
+ 8000e94:	0800159a 	.word	0x0800159a
  8000e98:	00000000 	.word	0x00000000
  8000e9c:	08000c4f 	.word	0x08000c4f
- 8000ea0:	08001597 	.word	0x08001597
+ 8000ea0:	08001596 	.word	0x08001596
 
 08000ea4 <_printf_common>:
  8000ea4:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -2148,8 +2148,8 @@ Infinite_Loop:
  80011ac:	2500      	movs	r5, #0
  80011ae:	f104 0619 	add.w	r6, r4, #25
  80011b2:	e7f5      	b.n	80011a0 <_printf_i+0x220>
- 80011b4:	080015a2 	.word	0x080015a2
- 80011b8:	080015b3 	.word	0x080015b3
+ 80011b4:	080015a1 	.word	0x080015a1
+ 80011b8:	080015b2 	.word	0x080015b2
 
 080011bc <__sflush_r>:
  80011bc:	f9b1 200c 	ldrsh.w	r2, [r1, #12]

@@ -37,11 +37,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00002057  00000000  00000000  000049ec  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00002294  00000000  00000000  00006a43  2**0
+ 17 .debug_line   00002292  00000000  00000000  00006a43  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000904de  00000000  00000000  00008cd7  2**0
+ 18 .debug_str    000904de  00000000  00000000  00008cd5  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000991b5  2**0
+ 19 .comment      00000043  00000000  00000000  000991b3  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00000c18  00000000  00000000  000991f8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -437,9 +437,9 @@ void *_sbrk(ptrdiff_t incr)
  800041c:	200001c8 	.word	0x200001c8
 
 08000420 <SystickDelay>:
+#define SYSTICk_EN		 	(1U<<0)
 #define SYSTICK_CLKSOURCE	(1U<<2)
 #define SYSTICK_COUNTFLAG	(1U<<16)
-
 
 void SystickDelay(int delay)
 {
