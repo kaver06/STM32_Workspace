@@ -1,4 +1,4 @@
-12:31:08 **** Build of configuration Debug for project 9_Uart_RX ****
+12:26:39 **** Build of configuration Debug for project 9_Uart_RX ****
 make -j8 all 
 arm-none-eabi-size  9_Uart_RX.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  9_Uart_RX.elf
 Finished building: default.size.stdout
  
 
-12:31:08 Build Finished. 0 errors, 0 warnings. (took 361ms)
+12:26:39 Build Finished. 0 errors, 0 warnings. (took 249ms)
 

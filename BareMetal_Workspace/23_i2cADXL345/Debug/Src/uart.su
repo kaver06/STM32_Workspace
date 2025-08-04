@@ -1,0 +1,10 @@
+C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/23_i2cADXL345/Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+../Src/uart.c:30:5:__io_putchar	16	static
+../Src/uart.c:36:6:init_uart3_tx	8	static
+../Src/uart.c:61:6:init_uart3_rxtx	8	static
+../Src/uart.c:95:6:uart3_write	16	static
+../Src/uart.c:103:6:uart3_read	4	static
+../Src/uart.c:110:13:uart_set_baudrate	24	static
+../Src/uart.c:115:17:compute_uart_bd	16	static
+../Src/uart.c:121:6:init_uart3_interrupt_rxtx	8	static
+../Src/uart.c:159:6:dma1_stream3_init	24	static

@@ -1,4 +1,4 @@
-12:31:05 **** Build of configuration Debug for project 4_Gpio_Output ****
+12:26:37 **** Build of configuration Debug for project 4_Gpio_Output ****
 make -j8 all 
 arm-none-eabi-size  4_Gpio_Output.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  4_Gpio_Output.elf
 Finished building: default.size.stdout
  
 
-12:31:06 Build Finished. 0 errors, 0 warnings. (took 444ms)
+12:26:38 Build Finished. 0 errors, 0 warnings. (took 273ms)
 

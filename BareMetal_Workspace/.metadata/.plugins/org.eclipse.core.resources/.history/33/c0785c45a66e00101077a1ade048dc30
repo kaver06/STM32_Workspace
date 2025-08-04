@@ -1,0 +1,40 @@
+#include "stm32f446xx.h"
+#include "i2c.h"
+
+/*
+ * PB8 I2C1_ SCL
+ * PB9 I2C1_ SCL
+ */
+#define GPIOBEN (1U<<1)
+#define I2C1EN 	(1U<<21)
+#define CR1_
+void i2c_init(void)
+{
+	//enable clock access to GPIOB
+	RCC->AHB1ENR |= GPIOBEN;
+	//Configure the mode of the port pins to alternate function
+	GPIOB->MODER |= (1U<<17);
+	GPIOB->MODER &= ~(1U<<16);
+	GPIOB->MODER |= (1U<<18);
+	GPIOB->MODER &=	 ~(1U<<19);
+	//configure the alternate function type
+	GPIOB->AFR[1] = (1U<<2);
+	GPIOB->AFR[1] |=(1U<<6);
+	//set output type to be open drain
+	GPIOB->OTYPER |= (1U<<8);
+	GPIOB->OTYPER |= (1U<<9);
+	//enable the pullups
+	GPIOB->PUPDR |= (1U<<16);
+	GPIOB->PUPDR &= ~(1<<17);
+	GPIOB->PUPDR |= (1U<<18);
+	GPIOB->PUPDR &= ~(1<<19);
+	//enable clock access to apb1 bus of I2C1
+	RCC->APB1ENR |= I2C1EN;
+	//enter the i2c reset mode
+
+	//get out of reset
+	//configure the peripheral clock frequency
+	//set the i2c mode to standard mode,100KHz clock
+	//set the rise time
+	//enable i2c module
+}

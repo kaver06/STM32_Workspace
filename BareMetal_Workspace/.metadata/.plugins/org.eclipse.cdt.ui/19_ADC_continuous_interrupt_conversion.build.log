@@ -1,23 +1,10 @@
-10:19:23 **** Build of configuration Debug for project 19_ADC_continuous_interrupt_conversion ****
+12:26:32 **** Build of configuration Debug for project 19_ADC_continuous_interrupt_conversion ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f446zetx.d" -MT"Startup/startup_stm32f446zetx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f446zetx.o" "../Startup/startup_stm32f446zetx.s"
-arm-none-eabi-gcc "../Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/19_ADC_continuous_interrupt_conversion/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/19_ADC_continuous_interrupt_conversion/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/adc.d" -MT"Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/adc.o"
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/19_ADC_continuous_interrupt_conversion/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/19_ADC_continuous_interrupt_conversion/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/19_ADC_continuous_interrupt_conversion/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/19_ADC_continuous_interrupt_conversion/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/19_ADC_continuous_interrupt_conversion/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/19_ADC_continuous_interrupt_conversion/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/19_ADC_continuous_interrupt_conversion/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/19_ADC_continuous_interrupt_conversion/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
-arm-none-eabi-gcc -o "19_ADC_continuous_interrupt_conversion.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\BareMetal Workspace\19_ADC_continuous_interrupt_conversion\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="19_ADC_continuous_interrupt_conversion.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: 19_ADC_continuous_interrupt_conversion.elf has a LOAD segment with RWX permissions
-Finished building target: 19_ADC_continuous_interrupt_conversion.elf
- 
 arm-none-eabi-size  19_ADC_continuous_interrupt_conversion.elf 
-arm-none-eabi-objdump -h -S 19_ADC_continuous_interrupt_conversion.elf  > "19_ADC_continuous_interrupt_conversion.list"
    text	   data	    bss	    dec	    hex	filename
    5568	    100	   1908	   7576	   1d98	19_ADC_continuous_interrupt_conversion.elf
 Finished building: default.size.stdout
  
-Finished building: 19_ADC_continuous_interrupt_conversion.list
- 
 
-10:19:26 Build Finished. 0 errors, 1 warnings. (took 2s.545ms)
+12:26:33 Build Finished. 0 errors, 0 warnings. (took 258ms)
 

@@ -5,13 +5,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 S_SRCS += \
-../Startup/startup_stm32f446zetx.s 
+../Startup/startup_stm32f411retx.s 
 
 OBJS += \
-./Startup/startup_stm32f446zetx.o 
+./Startup/startup_stm32f411retx.o 
 
 S_DEPS += \
-./Startup/startup_stm32f446zetx.d 
+./Startup/startup_stm32f411retx.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +21,7 @@ Startup/%.o: ../Startup/%.s Startup/subdir.mk
 clean: clean-Startup
 
 clean-Startup:
-	-$(RM) ./Startup/startup_stm32f446zetx.d ./Startup/startup_stm32f446zetx.o
+	-$(RM) ./Startup/startup_stm32f411retx.d ./Startup/startup_stm32f411retx.o
 
 .PHONY: clean-Startup
 

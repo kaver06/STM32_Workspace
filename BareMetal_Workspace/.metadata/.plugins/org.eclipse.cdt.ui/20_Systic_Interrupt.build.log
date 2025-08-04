@@ -1,6 +1,6 @@
-12:31:01 **** Incremental Build of configuration Debug for project 20_Systic_Interrupt ****
+12:26:33 **** Build of configuration Debug for project 20_Systic_Interrupt ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/systick.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F4 -DSTM32F411RETx -DDEBUG -DSTM32F411xE -c -I../Inc -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/20_Systic_Interrupt/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/kaver/OneDrive/Desktop/C_files/STM32/BareMetal Workspace/20_Systic_Interrupt/Drivers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/systick.d" -MT"Src/systick.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/systick.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f411retx.d" -MT"Startup/startup_stm32f411retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f411retx.o" "../Startup/startup_stm32f411retx.s"
 arm-none-eabi-gcc -o "20_Systic_Interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\BareMetal Workspace\20_Systic_Interrupt\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="20_Systic_Interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: 20_Systic_Interrupt.elf has a LOAD segment with RWX permissions
 Finished building target: 20_Systic_Interrupt.elf
@@ -14,5 +14,5 @@ Finished building: default.size.stdout
 Finished building: 20_Systic_Interrupt.list
  
 
-12:31:03 Build Finished. 0 errors, 1 warnings. (took 1s.336ms)
+12:26:34 Build Finished. 0 errors, 1 warnings. (took 817ms)
 
