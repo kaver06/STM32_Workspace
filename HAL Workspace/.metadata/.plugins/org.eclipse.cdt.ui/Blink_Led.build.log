@@ -1,0 +1,17 @@
+12:24:12 **** Incremental Build of configuration Debug for project Blink_Led ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Blink_Led.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\Blink_Led\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Blink_Led.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Blink_Led.elf
+ 
+arm-none-eabi-size  Blink_Led.elf 
+arm-none-eabi-objdump -h -S Blink_Led.elf  > "Blink_Led.list"
+   text	   data	    bss	    dec	    hex	filename
+   6780	     12	   1572	   8364	   20ac	Blink_Led.elf
+Finished building: default.size.stdout
+ 
+Finished building: Blink_Led.list
+ 
+
+12:24:17 Build Finished. 0 errors, 0 warnings. (took 4s.633ms)
+

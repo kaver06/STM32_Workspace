@@ -1,0 +1,10 @@
+14:42:04 **** Incremental Build of configuration Debug for project Polling_NonBlocking_Delay ****
+make -j8 all 
+arm-none-eabi-size  Polling_NonBlocking_Delay.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6868	     12	   1572	   8452	   2104	Polling_NonBlocking_Delay.elf
+Finished building: default.size.stdout
+ 
+
+14:42:05 Build Finished. 0 errors, 0 warnings. (took 561ms)
+
