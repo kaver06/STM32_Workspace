@@ -28,6 +28,7 @@ pp_default=217,232,247
 pp_directive=221,40,103
 pp_header=23,198,163
 scalability.detect=false
+scalability.reconciler=false
 semanticHighlighting.class.bold=true
 semanticHighlighting.class.color=18,144,195
 semanticHighlighting.class.enabled=true
