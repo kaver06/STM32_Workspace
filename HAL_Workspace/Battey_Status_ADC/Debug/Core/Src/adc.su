@@ -1,0 +1,5 @@
+../Core/Src/adc.c:15:6:Start_Battery_ADC_Read	8	static
+../Core/Src/adc.c:24:7:BatteryMonitor_GetVoltage	16	static,ignoring_inline_asm
+../Core/Src/adc.c:33:6:BatteryMonitor_Init	8	static
+../Core/Src/adc.c:43:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/adc.c:57:6:HAL_ADC_ConvCpltCallback	40	static

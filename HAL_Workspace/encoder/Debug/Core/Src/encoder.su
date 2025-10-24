@@ -1,0 +1,8 @@
+../Core/Src/encoder.c:21:6:encoder_init	8	static
+../Core/Src/encoder.c:44:6:encoder_tim_update_callback	24	static
+../Core/Src/encoder.c:73:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/encoder.c:80:9:encoder_get_left_position	24	static,ignoring_inline_asm
+../Core/Src/encoder.c:92:9:encoder_get_right_position	24	static,ignoring_inline_asm
+../Core/Src/encoder.c:103:7:encoder_get_left_degree	24	static
+../Core/Src/encoder.c:110:7:encoder_get_right_degree	24	static
+../Core/Src/encoder.c:117:6:encoder_reset_positions	16	static,ignoring_inline_asm

@@ -1,0 +1,17 @@
+/*
+ * uart.h
+ *
+ *  Created on: Oct 24, 2025
+ *      Author: kaver
+ */
+
+#ifndef INC_UART_H_
+#define INC_UART_H_
+
+#include "stm32f4xx_hal.h"
+#include <string.h>
+
+void MX_USART2_UART_Init(void);
+extern UART_HandleTypeDef huart2;
+
+#endif /* INC_UART_H_ */

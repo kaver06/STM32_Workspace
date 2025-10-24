@@ -1,0 +1,31 @@
+/*
+ * ultrasonic.h
+ *
+ *  Created on: Oct 20, 2025
+ *      Author: kaver
+ */
+
+#ifndef INC_ULTRASONIC_H_
+#define INC_ULTRASONIC_H_
+
+#include "main.h"
+
+#define TRIGGER_PIN      GPIO_PIN_8
+#define TRIGGER_PORT     GPIOB
+#define LED_PIN          GPIO_PIN_7
+#define LED_PORT         GPIOB
+#define DISTANCE_THRESHOLD 30  // cm
+
+// Initialize ultrasonic sensor (TIM2)
+void Ultrasonic_Init(void);
+
+// Trigger one pulse manually
+void Ultrasonic_Trigger(void);
+
+// Get last measured distance
+uint32_t Ultrasonic_GetDistance(void);
+
+// Flag if object is closer than threshold
+extern volatile uint8_t object_near_flag;
+
+#endif /* INC_ULTRASONIC_H_ */

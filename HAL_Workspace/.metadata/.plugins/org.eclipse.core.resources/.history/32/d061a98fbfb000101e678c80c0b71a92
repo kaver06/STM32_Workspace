@@ -1,0 +1,15 @@
+/*
+ * timer.h
+ *
+ *  Created on: Oct 24, 2025
+ *      Author: kaver
+ */
+
+#ifndef INC_TIMER_H_
+#define INC_TIMER_H_
+
+#include "stm32f4xx_hal.h"
+
+void MX_TIM10_Init(void);
+
+#endif /* INC_TIMER_H_ */

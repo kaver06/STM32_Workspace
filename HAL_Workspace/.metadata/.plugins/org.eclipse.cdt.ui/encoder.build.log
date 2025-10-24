@@ -1,0 +1,10 @@
+19:55:04 **** Incremental Build of configuration Debug for project encoder ****
+make -j8 all 
+arm-none-eabi-size  encoder.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31132	    476	   3388	  34996	   88b4	encoder.elf
+Finished building: default.size.stdout
+ 
+
+19:55:04 Build Finished. 0 errors, 0 warnings. (took 309ms)
+

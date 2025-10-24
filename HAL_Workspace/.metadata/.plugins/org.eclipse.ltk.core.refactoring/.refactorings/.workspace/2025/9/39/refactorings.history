@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;MPU6050/Core/Inc/mpu6050.h&apos;" deleteContents="false" description="Delete resource &apos;MPU6050/Core/Inc/mpu6050.h&apos;" element1="/MPU6050/Core/Inc/mpu6050.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1758953289607"/>
+</session>

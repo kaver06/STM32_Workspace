@@ -1,0 +1,18 @@
+/*
+ * ultrasonic.h
+ *
+ *  Created on: Oct 20, 2025
+ *      Author: kaver
+ */
+
+#ifndef INC_ULTRASONIC_H_
+#define INC_ULTRASONIC_H_
+
+#include "main.h"
+
+void Ultrasonic_Init(void);
+void Ultrasonic_Trigger(void);
+float Ultrasonic_GetDistance(void);
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
+
+#endif /* INC_ULTRASONIC_H_ */

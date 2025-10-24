@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;MPU6050/Core/Inc/mpu6050&apos; to &apos;mpu6050.h&apos;" description="Rename resource &apos;mpu6050&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/mpu6050" name="mpu6050.h" stamp="1758953199464" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;MPU6050/Core/Src/mpu6050.c&apos; to &apos;lib.c&apos;" description="Rename resource &apos;mpu6050.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/mpu6050.c" name="lib.c" stamp="1758953326300" updateReferences="true"/>
+</session>

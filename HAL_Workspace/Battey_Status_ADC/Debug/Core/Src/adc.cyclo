@@ -1,0 +1,5 @@
+../Core/Src/adc.c:15:6:Start_Battery_ADC_Read	2
+../Core/Src/adc.c:24:7:BatteryMonitor_GetVoltage	1
+../Core/Src/adc.c:33:6:BatteryMonitor_Init	1
+../Core/Src/adc.c:43:6:HAL_TIM_PeriodElapsedCallback	3
+../Core/Src/adc.c:57:6:HAL_ADC_ConvCpltCallback	9

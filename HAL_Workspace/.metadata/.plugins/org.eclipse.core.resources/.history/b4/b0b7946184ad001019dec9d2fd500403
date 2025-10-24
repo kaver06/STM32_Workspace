@@ -1,0 +1,73 @@
+/*
+ * ultrasonic.c
+ *
+ *  Created on: Oct 20, 2025
+ *      Author: kaver
+ */
+
+#include "ultrasonic.h"
+
+
+#define TRIG_PIN       GPIO_PIN_8
+#define TRIG_PORT      GPIOB
+#define ECHO_PIN       GPIO_PIN_6
+
+static volatile uint32_t start_time = 0;
+static volatile uint32_t end_time = 0;
+static volatile uint8_t  capture_done = 0;
+static float distance = 0.0f;
+
+extern TIM_HandleTypeDef htim2;
+
+void Ultrasonic_Init(void)
+{
+    HAL_TIM_Base_Start_IT(&htim2);  // Start Timer 2 interrupt
+}
+
+void Ultrasonic_Trigger(void)
+{
+	HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_SET);
+	for(volatile int i=0;i<20;i++); // calibrated for ~10 µs
+	HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_RESET);
+}
+
+float Ultrasonic_GetDistance(void)
+{
+    if (capture_done)
+    {
+        uint32_t pulse_width = (end_time >= start_time) ?
+                                (end_time - start_time) :
+                                (0xFFFFFFFF - start_time + end_time);
+        // Convert to cm: (pulse_width µs * speed of sound / 2)
+        distance = (pulse_width * 0.0343f) / 2.0f;
+        capture_done = 0;
+    }
+    return distance;
+}
+
+// Called by HAL when EXTI interrupt occurs
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if (GPIO_Pin == ECHO_PIN)
+    {
+    	if(HAL_GPIO_ReadPin(ECHO_PORT, ECHO_PIN) == GPIO_PIN_SET)
+        {
+            start_time = __HAL_TIM_GET_COUNTER(&htim2);
+        }
+        else
+        {
+            end_time = __HAL_TIM_GET_COUNTER(&htim2);
+            capture_done = 1;
+        }
+    }
+}
+
+// Periodic trigger
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim->Instance == TIM2)
+    {
+        Ultrasonic_Trigger();
+    }
+}
+

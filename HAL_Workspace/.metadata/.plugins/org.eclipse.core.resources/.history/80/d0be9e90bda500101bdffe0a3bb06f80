@@ -1,0 +1,37 @@
+/*
+ * mpu9250.c
+ *
+ *  Created on: Oct 10, 2025
+ *      Author: kaver
+ */
+
+#include "mpu9250.h"
+
+extern I2C_HandleTypeDef hi2c2;
+
+void mpu9250_init(void)
+{
+  HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c2,(DEVICE_ADDRESS<<1)|0,1, 100);
+	{
+	  if(ret==HAL_OK)
+	  {
+		  printf("The device is ready\n");
+	  }
+	  else
+	  {
+		  printf("Not able to connect\n");
+	  }
+	}
+	uint8_t temp_data = FS_GYRO_500;
+	ret = HAL_I2C_Mem_Write(&hi2c2, (DEVICE_ADDRESS<<1)|0, REG_CONFIG_GYRO, 1,&temp_data,1,100);
+	{
+		  if(ret==HAL_OK)
+		  {
+			  printf("Writing to register 21\n");
+		  }
+		  else
+		  {
+			  printf("Failed writing to register 27\n");
+		  }
+	   }
+}

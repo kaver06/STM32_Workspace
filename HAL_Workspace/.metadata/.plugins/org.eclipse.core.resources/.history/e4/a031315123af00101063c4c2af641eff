@@ -1,0 +1,26 @@
+#ifndef INC_MPU9250_H_
+#define INC_MPU9250_H_
+
+#include "stm32f4xx_hal.h"
+#include <stdio.h>
+
+#define MPU9250_ADDR        (0x68 << 1)
+#define MPU9250_INT_PIN_CFG 0x37
+
+#define AK8963_ADDR         (0x0C << 1)
+#define AK8963_WHO_AM_I     0x00
+#define AK8963_CNTL1        0x0A
+#define AK8963_ST1          0x02
+#define AK8963_XOUT_L       0x03
+
+typedef struct {
+    int16_t mx, my, mz;
+} Mag_Data;
+
+extern Mag_Data mag;
+
+void mpu_bypass_enable(I2C_HandleTypeDef *hi2c);
+void mag_init(I2C_HandleTypeDef *hi2c);
+void mag_read(I2C_HandleTypeDef *hi2c);
+
+#endif /* INC_MPU9250_H_ */
