@@ -1,0 +1,10 @@
+12:20:53 **** Incremental Build of configuration Debug for project ADXL_345 ****
+make -j8 all 
+arm-none-eabi-size  ADXL_345.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17096	     96	   2168	  19360	   4ba0	ADXL_345.elf
+Finished building: default.size.stdout
+ 
+
+12:20:54 Build Finished. 0 errors, 0 warnings. (took 765ms)
+

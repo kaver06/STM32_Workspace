@@ -1,4 +1,4 @@
-12:35:19 **** Build of configuration Debug for project Polling ****
+09:50:29 **** Build of configuration Debug for project Polling ****
 make -j8 all 
 arm-none-eabi-size  Polling.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  Polling.elf
 Finished building: default.size.stdout
  
 
-12:35:19 Build Finished. 0 errors, 0 warnings. (took 733ms)
+09:50:29 Build Finished. 0 errors, 0 warnings. (took 422ms)
 

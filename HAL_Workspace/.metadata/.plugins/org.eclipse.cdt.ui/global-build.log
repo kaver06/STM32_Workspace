@@ -1,98 +1,28 @@
-15:29:41 **** Incremental Build of configuration Debug for project HC05 ****
+16:10:13 **** Incremental Build of configuration Debug for project UART_DMA ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "HC05.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\HC05\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HC05.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: HC05.elf
- 
-arm-none-eabi-size  HC05.elf 
-arm-none-eabi-objdump -h -S HC05.elf  > "HC05.list"
-   text	   data	    bss	    dec	    hex	filename
-  21852	    104	   3376	  25332	   62f4	HC05.elf
-Finished building: default.size.stdout
- 
-Finished building: HC05.list
- 
-15:30:25 **** Incremental Build of configuration Debug for project HC05 ****
-make -j8 all 
-arm-none-eabi-size  HC05.elf 
-   text	   data	    bss	    dec	    hex	filename
-  21852	    104	   3376	  25332	   62f4	HC05.elf
-Finished building: default.size.stdout
- 
-15:30:54 **** Incremental Build of configuration Debug for project HC05 ****
-make -j8 all 
-arm-none-eabi-size  HC05.elf 
-   text	   data	    bss	    dec	    hex	filename
-  21852	    104	   3376	  25332	   62f4	HC05.elf
-Finished building: default.size.stdout
- 
-15:51:44 **** Build of configuration Debug for project HC05 ****
+../Core/Src/main.c:315:30: error: expected declaration specifiers or '...' before '&' token
+  315 | HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t*)uart_msg, 20)
+      |                              ^
+../Core/Src/main.c:315:39: error: expected declaration specifiers or '...' before '(' token
+  315 | HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t*)uart_msg, 20)
+      |                                       ^
+../Core/Src/main.c:315:59: error: expected declaration specifiers or '...' before numeric constant
+  315 | HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t*)uart_msg, 20)
+      |                                                           ^~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:11:27 **** Incremental Build of configuration Debug for project UART_DMA ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "HC05.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\HC05\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HC05.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: HC05.elf
+arm-none-eabi-gcc -o "UART_DMA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\UART_DMA\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_DMA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_DMA.elf
  
-arm-none-eabi-size  HC05.elf 
-arm-none-eabi-objdump -h -S HC05.elf  > "HC05.list"
+arm-none-eabi-size  UART_DMA.elf 
+arm-none-eabi-objdump -h -S UART_DMA.elf  > "UART_DMA.list"
    text	   data	    bss	    dec	    hex	filename
-  21836	    104	   3376	  25316	   62e4	HC05.elf
+  19272	     12	   3188	  22472	   57c8	UART_DMA.elf
 Finished building: default.size.stdout
  
-Finished building: HC05.list
- 
-16:00:04 **** Incremental Build of configuration Debug for project HC05 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "HC05.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\HC05\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HC05.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: HC05.elf
- 
-arm-none-eabi-size  HC05.elf 
-arm-none-eabi-objdump -h -S HC05.elf  > "HC05.list"
-   text	   data	    bss	    dec	    hex	filename
-  21836	    104	   3376	  25316	   62e4	HC05.elf
-Finished building: default.size.stdout
- 
-Finished building: HC05.list
- 
-16:06:06 **** Incremental Build of configuration Debug for project HC05 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "HC05.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\HC05\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HC05.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: HC05.elf
- 
-arm-none-eabi-size  HC05.elf 
-arm-none-eabi-objdump -h -S HC05.elf  > "HC05.list"
-   text	   data	    bss	    dec	    hex	filename
-  21836	    104	   3376	  25316	   62e4	HC05.elf
-Finished building: default.size.stdout
- 
-Finished building: HC05.list
- 
-16:19:05 **** Incremental Build of configuration Debug for project HC05 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "HC05.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\HC05\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HC05.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: HC05.elf
- 
-arm-none-eabi-size  HC05.elf 
-arm-none-eabi-objdump -h -S HC05.elf  > "HC05.list"
-   text	   data	    bss	    dec	    hex	filename
-  21852	    104	   3376	  25332	   62f4	HC05.elf
-Finished building: default.size.stdout
- 
-Finished building: HC05.list
- 
-16:55:53 **** Incremental Build of configuration Debug for project HC05 ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "HC05.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\HC05\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HC05.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: HC05.elf
- 
-arm-none-eabi-size  HC05.elf 
-arm-none-eabi-objdump -h -S HC05.elf  > "HC05.list"
-   text	   data	    bss	    dec	    hex	filename
-  21852	    104	   3376	  25332	   62f4	HC05.elf
-Finished building: default.size.stdout
- 
-Finished building: HC05.list
+Finished building: UART_DMA.list
  

@@ -40,7 +40,7 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-uint8_t mode=0;
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -49,13 +49,7 @@ uint8_t mode=0;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	/*mode++;
-	if(mode>3)
-		mode=0;*/
-	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
-}
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -101,22 +95,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
-	  HAL_Delay(2000);
-	  /*if(mode==0)
-		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, RESET);
-	  if(mode==1)
-		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, SET);
-	  if(mode==2)
-	  {
-		  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
-		  HAL_Delay(500);
-	  }
-	  if(mode==3)
-	  {
-		  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
-		  HAL_Delay(1000);
-	  }	  */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -211,7 +190,13 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	/*mode++;
+	if(mode>3)
+		mode=0;*/
+	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0);
+}
 /* USER CODE END 4 */
 
 /**

@@ -1,4 +1,0 @@
-../Core/Src/mpu9250.c:11:6:HAL_I2C_MemRxCpltCallback	16	static
-../Core/Src/mpu9250.c:18:6:mpu9250_init	64	static
-../Core/Src/mpu9250.c:48:6:mpu9250_parse_accel_gyro	40	static
-../Core/Src/mpu9250.c:67:6:mpu9250_read_mag	64	static
