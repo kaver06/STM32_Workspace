@@ -1,35 +1,21 @@
-14:33:27 **** Incremental Build of configuration Debug for project Blink LED ****
+16:49:57 **** Incremental Build of configuration Debug for project Blink LED ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Blink LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\CIMSIS RTOS\Blink LED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Blink LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -o "Blink LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\CMSIS RTOS\Blink LED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Blink LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Blink LED.elf
  
 arm-none-eabi-size  Blink\ LED.elf 
 arm-none-eabi-objdump -h -S Blink\ LED.elf  > "Blink LED.list"
    text	   data	    bss	    dec	    hex	filename
-  23176	     96	  20968	  44240	   acd0	Blink LED.elf
+  27956	     96	  21096	  49148	   bffc	Blink LED.elf
 Finished building: default.size.stdout
  
 Finished building: Blink LED.list
  
-14:36:56 **** Incremental Build of configuration Debug for project Blink LED ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Blink LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\CIMSIS RTOS\Blink LED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Blink LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Blink LED.elf
- 
-arm-none-eabi-size  Blink\ LED.elf 
-arm-none-eabi-objdump -h -S Blink\ LED.elf  > "Blink LED.list"
-   text	   data	    bss	    dec	    hex	filename
-  23176	     96	  20968	  44240	   acd0	Blink LED.elf
-Finished building: default.size.stdout
- 
-Finished building: Blink LED.list
- 
-14:37:33 **** Incremental Build of configuration Debug for project Blink LED ****
+16:50:14 **** Incremental Build of configuration Debug for project Blink LED ****
 make -j8 all 
 arm-none-eabi-size  Blink\ LED.elf 
    text	   data	    bss	    dec	    hex	filename
-  23176	     96	  20968	  44240	   acd0	Blink LED.elf
+  27956	     96	  21096	  49148	   bffc	Blink LED.elf
 Finished building: default.size.stdout
  

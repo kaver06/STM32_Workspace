@@ -1,0 +1,10 @@
+12:24:39 **** Build of configuration Debug for project IMU ****
+make -j8 all 
+arm-none-eabi-size  IMU.elf 
+   text	   data	    bss	    dec	    hex	filename
+  49508	    468	   3564	  53540	   d124	IMU.elf
+Finished building: default.size.stdout
+ 
+
+12:24:40 Build Finished. 0 errors, 0 warnings. (took 1s.74ms)
+

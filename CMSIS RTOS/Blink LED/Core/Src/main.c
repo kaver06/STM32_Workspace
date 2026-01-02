@@ -22,7 +22,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include<stdio.h>
+#include<string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -64,8 +65,29 @@ const osThreadAttr_t Task03_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for myQueue01 */
+osMessageQueueId_t myQueue01Handle;
+const osMessageQueueAttr_t myQueue01_attributes = {
+  .name = "myQueue01"
+};
+/* Definitions for myMutex01 */
+osMutexId_t myMutex01Handle;
+const osMutexAttr_t myMutex01_attributes = {
+  .name = "myMutex01"
+};
+/* Definitions for myBinarySem01 */
+osSemaphoreId_t myBinarySem01Handle;
+const osSemaphoreAttr_t myBinarySem01_attributes = {
+  .name = "myBinarySem01"
+};
+/* Definitions for myCountingSem01 */
+osSemaphoreId_t myCountingSem01Handle;
+const osSemaphoreAttr_t myCountingSem01_attributes = {
+  .name = "myCountingSem01"
+};
 /* USER CODE BEGIN PV */
-volatile int count;
+volatile int count=0;
+char buff[100];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -121,10 +143,20 @@ int main(void)
 
   /* Init scheduler */
   osKernelInitialize();
+  /* Create the mutex(es) */
+  /* creation of myMutex01 */
+  myMutex01Handle = osMutexNew(&myMutex01_attributes);
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
+
+  /* Create the semaphores(s) */
+  /* creation of myBinarySem01 */
+  myBinarySem01Handle = osSemaphoreNew(1, 1, &myBinarySem01_attributes);
+
+  /* creation of myCountingSem01 */
+  myCountingSem01Handle = osSemaphoreNew(3, 0, &myCountingSem01_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -133,6 +165,10 @@ int main(void)
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
+
+  /* Create the queue(s) */
+  /* creation of myQueue01 */
+  myQueue01Handle = osMessageQueueNew (256, sizeof(uint16_t), &myQueue01_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -304,18 +340,38 @@ static void MX_GPIO_Init(void)
 void LED01(void *argument)
 {
   /* USER CODE BEGIN 5 */
-  /* Infinite loop */
-  for(;;)
-  {
-	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_0);
-    osDelay(500);
-    count++;
-    if(count>20)
-    {
-    	osThreadTerminate(osThreadGetId());
-    }
 
-  }
+	/* Infinite loop */
+	for(;;)
+	{
+		uint16_t data = 26;
+		osStatus_t status= osMessageQueuePut(myQueue01Handle, &data, 0, osWaitForever);
+		if(status==osOK)
+		{
+			snprintf(buff,sizeof(buff),"Sent\n");
+			HAL_UART_Transmit(&huart2, (uint8_t*)buff, strlen(buff), 100);
+			osThreadSuspend(Task01Handle);
+		}
+	}
+//  for(int i=0;i<10;i++)
+//  {
+//	  osStatus_t status = osSemaphoreAcquire(myCountingSem01Handle, osWaitForever);
+//	  if(status == osOK)
+//	  {
+//	int temp=count;
+//	for(int i=0;i<6000;i++)
+//	{
+//		int t;
+//		t++;
+//		t--;
+//	}
+//	temp+=1;
+//	count=temp;
+//    osDelay(1);
+//    osSemaphoreRelease(myCountingSem01Handle	);
+//  }
+// }
+//  osThreadTerminate(osThreadGetId());
   /* USER CODE END 5 */
 }
 
@@ -330,13 +386,35 @@ void LED02(void *argument)
 {
   /* USER CODE BEGIN LED02 */
   /* Infinite loop */
-  for(;;)
-  {
-	   osDelay(3000);
-	   count=0;
-	   osThreadResume(Task01Handle);
-	   osThreadTerminate(Task03Handle);
-  }
+	for(;;)
+	{
+		uint16_t new_data;
+		osDelay(2000);
+		osMessageQueueGet(myQueue01Handle, &new_data, 0, osWaitForever);
+		snprintf(buff,sizeof(buff),"Value : %d\n",new_data);
+		HAL_UART_Transmit(&huart2, (uint8_t*)buff, strlen(buff), 100);
+		osThreadSuspend(Task02Handle);
+
+	}
+//	 for(int i=0;i<10;i++)
+//	  {
+//		  osStatus_t status = osSemaphoreAcquire(myCountingSem01Handle, osWaitForever);
+//	  if(status == osOK)
+//	  {
+//		  int temp=count;
+//		  for(int i=0;i<6000;i++)
+//		  {
+//			  int t;
+//			  t++;
+//			  t--;
+//		  }
+//		  temp+=1;
+//		  count=temp;
+//		  osDelay(1);
+//		    osSemaphoreRelease(myCountingSem01Handle);
+//	  }
+//}
+//	osThreadTerminate(osThreadGetId());
   /* USER CODE END LED02 */
 }
 
@@ -353,8 +431,10 @@ void LED03(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(2000);
-    HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+	  osDelay(10);
+    //osDelay(5000);
+//    snprintf(buff,sizeof(buff),"\r\nCounter : %d",count);
+//    HAL_UART_Transmit(&huart2, (uint8_t*)buff, strlen(buff), 100);
   }
   /* USER CODE END LED03 */
 }

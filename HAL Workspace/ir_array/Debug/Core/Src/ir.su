@@ -1,0 +1,2 @@
+../Core/Src/ir.c:22:6:IR_Array_Read	24	static
+../Core/Src/ir.c:31:9:IR_Array_GetPattern	24	static

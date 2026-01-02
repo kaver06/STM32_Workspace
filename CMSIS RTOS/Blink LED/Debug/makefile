@@ -64,8 +64,8 @@ all: main-build
 main-build: Blink\ LED.elf secondary-outputs
 
 # Tool invocations
-Blink\ LED.elf Blink\ LED.map: $(OBJS) $(USER_OBJS) C:\Users\kaver\OneDrive\Desktop\C_files\STM32\CIMSIS\ RTOS\Blink\ LED\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Blink LED.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\CIMSIS RTOS\Blink LED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Blink LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Blink\ LED.elf Blink\ LED.map: $(OBJS) $(USER_OBJS) C:\Users\kaver\OneDrive\Desktop\C_files\STM32\CMSIS\ RTOS\Blink\ LED\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Blink LED.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\CMSIS RTOS\Blink LED\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Blink LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

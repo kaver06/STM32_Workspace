@@ -1,0 +1,121 @@
+18:35:52 **** Incremental Build of configuration Debug for project ir_array ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/ir.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ir.d" -MT"Core/Src/ir.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ir.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ir_array.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\ir_array\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ir_array.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ir_array.elf
+ 
+arm-none-eabi-size  ir_array.elf 
+arm-none-eabi-objdump -h -S ir_array.elf  > "ir_array.list"
+   text	   data	    bss	    dec	    hex	filename
+  17928	    120	   3232	  21280	   5320	ir_array.elf
+Finished building: default.size.stdout
+ 
+Finished building: ir_array.list
+ 
+18:36:37 **** Incremental Build of configuration Debug for project ir_array ****
+make -j8 all 
+arm-none-eabi-size  ir_array.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17928	    120	   3232	  21280	   5320	ir_array.elf
+Finished building: default.size.stdout
+ 
+18:37:31 **** Incremental Build of configuration Debug for project ir_array ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ir_array.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\ir_array\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ir_array.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ir_array.elf
+ 
+arm-none-eabi-size  ir_array.elf 
+arm-none-eabi-objdump -h -S ir_array.elf  > "ir_array.list"
+   text	   data	    bss	    dec	    hex	filename
+  18004	    120	   3232	  21356	   536c	ir_array.elf
+Finished building: default.size.stdout
+ 
+Finished building: ir_array.list
+ 
+18:44:12 **** Incremental Build of configuration Debug for project ir_array ****
+make -j8 all 
+arm-none-eabi-size  ir_array.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18004	    120	   3232	  21356	   536c	ir_array.elf
+Finished building: default.size.stdout
+ 
+10:50:10 **** Build of configuration Debug for project ir_array ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/ir.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ir.d" -MT"Core/Src/ir.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ir.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ir_array.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\ir_array\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ir_array.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ir_array.elf
+ 
+arm-none-eabi-size  ir_array.elf 
+arm-none-eabi-objdump -h -S ir_array.elf  > "ir_array.list"
+   text	   data	    bss	    dec	    hex	filename
+  18004	    120	   3232	  21356	   536c	ir_array.elf
+Finished building: default.size.stdout
+ 
+Finished building: ir_array.list
+ 
+10:53:00 **** Incremental Build of configuration Debug for project ir_array ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ir_array.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\ir_array\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ir_array.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ir_array.elf
+ 
+arm-none-eabi-size  ir_array.elf 
+arm-none-eabi-objdump -h -S ir_array.elf  > "ir_array.list"
+   text	   data	    bss	    dec	    hex	filename
+  18028	    120	   3232	  21380	   5384	ir_array.elf
+Finished building: default.size.stdout
+ 
+Finished building: ir_array.list
+ 
+10:53:58 **** Incremental Build of configuration Debug for project ir_array ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ir_array.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\ir_array\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ir_array.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ir_array.elf
+ 
+arm-none-eabi-size  ir_array.elf 
+arm-none-eabi-objdump -h -S ir_array.elf  > "ir_array.list"
+   text	   data	    bss	    dec	    hex	filename
+  18028	    120	   3232	  21380	   5384	ir_array.elf
+Finished building: default.size.stdout
+ 
+Finished building: ir_array.list
+ 
+10:58:28 **** Incremental Build of configuration Debug for project ir_array ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ir_array.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\ir_array\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ir_array.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ir_array.elf
+ 
+arm-none-eabi-size  ir_array.elf 
+arm-none-eabi-objdump -h -S ir_array.elf  > "ir_array.list"
+   text	   data	    bss	    dec	    hex	filename
+  18004	    120	   3232	  21356	   536c	ir_array.elf
+Finished building: default.size.stdout
+ 
+Finished building: ir_array.list
+ 
+12:19:00 **** Build of configuration Debug for project Blink_Led ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Blink_Led.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\kaver\OneDrive\Desktop\C_files\STM32\HAL Workspace\Blink_Led\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Blink_Led.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Blink_Led.elf
+ 
+arm-none-eabi-size  Blink_Led.elf 
+arm-none-eabi-objdump -h -S Blink_Led.elf  > "Blink_Led.list"
+   text	   data	    bss	    dec	    hex	filename
+   6768	     12	   1572	   8352	   20a0	Blink_Led.elf
+Finished building: default.size.stdout
+ 
+Finished building: Blink_Led.list
+ 
+12:24:39 **** Build of configuration Debug for project IMU ****
+make -j8 all 
+arm-none-eabi-size  IMU.elf 
+   text	   data	    bss	    dec	    hex	filename
+  49508	    468	   3564	  53540	   d124	IMU.elf
+Finished building: default.size.stdout
+ 
