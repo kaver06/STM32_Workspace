@@ -1,0 +1,10 @@
+12:38:04 **** Incremental Build of configuration Debug for project 08_Task_Queue_Feedback ****
+make -j8 all 
+arm-none-eabi-size  08_Task_Queue_Feedback.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20752	     96	  20920	  41768	   a328	08_Task_Queue_Feedback.elf
+Finished building: default.size.stdout
+ 
+
+12:38:04 Build Finished. 0 errors, 0 warnings. (took 250ms)
+

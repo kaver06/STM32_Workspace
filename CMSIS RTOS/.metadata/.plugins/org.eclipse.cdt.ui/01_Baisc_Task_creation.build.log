@@ -1,0 +1,25 @@
+12:49:58 **** Incremental Build of configuration Debug for project 01_Baisc_Task_creation ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartTask01':
+../Core/Src/main.c:355:14: warning: unused variable 'msg' [-Wunused-variable]
+  355 |         char msg[]="Hello from task01\n";
+      |              ^~~
+../Core/Src/main.c: In function 'StartTask02':
+../Core/Src/main.c:376:14: warning: unused variable 'msg' [-Wunused-variable]
+  376 |         char msg[]="Hello from task02\n";
+      |              ^~~
+arm-none-eabi-gcc -o "01_Baisc_Task_creation.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\C_Files\STM32\RTOS Workspace\Workspace\01_Baisc_Task_creation\STM32F446ZETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="01_Baisc_Task_creation.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 01_Baisc_Task_creation.elf
+ 
+arm-none-eabi-size  01_Baisc_Task_creation.elf 
+arm-none-eabi-objdump -h -S 01_Baisc_Task_creation.elf  > "01_Baisc_Task_creation.list"
+   text	   data	    bss	    dec	    hex	filename
+  26340	     96	  22224	  48660	   be14	01_Baisc_Task_creation.elf
+Finished building: default.size.stdout
+ 
+Finished building: 01_Baisc_Task_creation.list
+ 
+
+12:50:01 Build Finished. 0 errors, 2 warnings. (took 2s.396ms)
+

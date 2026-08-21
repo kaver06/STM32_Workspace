@@ -1,9 +1,12 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Blink LED Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:02_Task_Race_Condition Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:01_Baisc_Task_creation Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:03_Task_Mutex Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:04_Task_Priority_Inversion Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:05_Task_Semaphore Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:06_Task_Counting_Semaphore Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:07_Task_Queues Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:08_Task_Queues_Feedback Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:09_Task_Event_Flags Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:010_Task_Event_Flags_Multiple Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:01_Project_Smart_Monitoring_Alarm_System Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001 Tasks Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:01_Task_Creation_Priorities Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:P1 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:011_Task_Timer Debug
 eclipse.preferences.version=1
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Blink\ LED\ Debug/activeLaunchMode=run
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Blink\ LED\ Debug/activeLaunchTarget=null\:---
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Demo\ Debug/activeLaunchMode=run
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Demo\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001\ Tasks\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:001\ Tasks\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:01_Baisc_Task_creation\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:01_Task_Creation_Priorities\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:05_Task_Semaphore\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:07_Task_Queue_Feedback/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:P1\ Debug/activeLaunchMode=run
